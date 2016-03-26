@@ -1,1 +1,19 @@
 <h1>hikes index page</h1>
+
+
+
+
+<hr>
+
+	<% @hikes.each do |hike| %>
+	<h2>Hike: <%= hike.name %></h2>
+	<h3>Location: <%= hike.location %></h3>
+	<h4>About:</h4><p><%= hike.description%></p>
+ 
+
+	<%= link_to 'View', hike_path(hike.id) %>
+  <%= link_to 'Delete', hike, :method => 'delete' %>
+
+  <hr>
+
+      	<% end %>
