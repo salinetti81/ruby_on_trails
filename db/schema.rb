@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325133434) do
+ActiveRecord::Schema.define(version: 20160326164253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "hikes", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.text   "description"
+    t.text   "img_url"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
