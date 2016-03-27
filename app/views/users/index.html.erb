@@ -2,3 +2,10 @@
 <!-- <h4>Home Page for sign in or sign up</h4> -->
 
 
+<h1>List of Users </h1>
+<% @users.each do |user| %>
+
+	<a href="/user/<%= user.id %>"><%= user.email %></a> <br>
+
+<% end %>
+

@@ -1,11 +1,26 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!, only: :secure
     def index
-	    if current_user
-	        puts "I'm logged in as #{current_user.email}"
-	    else 
-	        puts "I'm not logged in"
-	    end
+      @users = User.all
+    end
+
+    def create
+    end
+
+    def new
+    end
+
+    def edit
+    end
+
+    def show
+      @user = User.find(params[:id])
+    end
+
+    def update
+    end
+
+    def destroy
     end
 
      def secure
