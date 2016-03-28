@@ -56,5 +56,7 @@ gem "opinio"
 
 gem "disqus"
 
+gem 'jquery-turbolinks'
+
 
 
