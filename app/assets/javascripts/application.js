@@ -40,6 +40,28 @@ s.src = '//hikebuddy.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
+//end of disqus function
+
+//image uploading by ospry
+var ospry = new Ospry('pk-test-xhjlgfnck6goq0ccloxx4l1h');
+
+var onUpload = function(err, metadata) {
+  ospry.get({
+    url: metadata.url,
+    maxHeight: 400,
+    imageReady: function(err, domImage) {
+      $('body').append(domImage);          
+    },
+  });
+};
+
+$('#up-form').submit(function(e) {
+  e.preventDefault();
+  ospry.up({
+    form: this,
+    imageReady: onUpload,
+  });
+});
 
 
 });//ends page change function
