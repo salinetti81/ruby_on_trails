@@ -63,6 +63,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    disqus (1.0.4)
+      json
     erubis (2.7.0)
     execjs (2.6.0)
     globalid (0.3.6)
@@ -88,6 +90,7 @@ GEM
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    opinio (0.3.0)
     orm_adapter (0.5.0)
     pg (0.18.4)
     rack (1.6.4)
@@ -165,8 +168,10 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  disqus
   jbuilder (~> 2.0)
   jquery-rails
+  opinio
   pg (~> 0.15)
   rails (= 4.2.6)
   sass-rails (~> 5.0)

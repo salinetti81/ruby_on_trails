@@ -51,3 +51,10 @@ gem 'devise'
 # Bootstrap Gem aded by Dan
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
+# Comments 
+gem "opinio"
+
+gem "disqus"
+
+
+
