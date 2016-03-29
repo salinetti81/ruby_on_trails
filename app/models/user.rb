@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
  	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
  	has_and_belongs_to_many :hikes
- 	validates :first_name, presence: true
- 	validates :last_name, presence: true
- 	validates :about, presence: true
+ 	validates :first_name, presence: false
+ 	validates :last_name, presence: false
+ 	validates :about, presence: false
 end
