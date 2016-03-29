@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  opinio_model
   devise_for :users
   resources :users
   resources :hikes
   
   root to: 'users#index'
   get 'secure' => 'users#secure'
+  
 
 
 end
