@@ -35,7 +35,14 @@ class UsersController < ApplicationController
       puts "====================="
       puts "User info was updated"
       puts "====================="
+    end
 
+    def updatejson
+      user = User.find(params[:id])
+      puts params[:image]
+      user.image = params[:image]
+      user.save
+      render json: user
     end
 
     def destroy
