@@ -21,15 +21,20 @@
   <%= link_to 'Explore Hikes', hikes_path(@hikes), :class => 'navbar-link' %> |
   <%= link_to 'Find Users', users_path(@users), :class => 'navbar-link' %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> 
+  
   <!-- Search Bar -->
   <%= form_tag(hikes_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search hikes" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Hikes" %>
   <%= submit_tag "Search", :name => nil %>
 <% end %>
   
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> 
+    <%= form_tag(hikes_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Hikes" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
 <% end %>
 <hr>
 </p>

@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   		put 'updatejson'
   	end
   end	
-  resources :hikes
+  resources :hikes 
   
-  root to: 'users#index'
+  root to: 'users#secure'
   get 'secure' => 'users#secure'
+  post '/hikes/search' => 'hikes#search'
   
 
 
