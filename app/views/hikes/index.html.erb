@@ -1,22 +1,16 @@
 <h1>Hikes</h1>
-<% @hikes.each do |hike| %>
-	<a href="/hikes/<%= hike.id %>"><%= hike.name %></a> <br>
-<% end %>
+<hr>
 
 	<% @hikes.each do |hike| %>
-	<h2>Hike: <%= hike.name %></h2>
-	<h3>Location: <%= hike.location %></h3>
-	<p><%= hike.description%></p>
-<hr>
-	<%= link_to 'View', hike_path(hike.id) %>
+	<h2><%= link_to hike.name, hike_path(hike.id) %></h2>
+	<h2><%= hike.location %></h2>
+	<!-- <p><%= hike.description%></p> -->
   <%= link_to 'Delete', hike, :method => 'delete' %>
 <hr>
 <% end %>
 
-Search Results
+<div id="map-canvas">Map Canvas
 
-<% if @posts.present? %>
-  <%= render @posts %>
-<% else %>
-  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
-<% end %>
+</div>
+
+

@@ -69,7 +69,15 @@ $(document).on("page:change", function() {
         });
         // make POST request to Users controller
         // to add img url to user
-     
+      $.ajax({
+          url: '/hikes/' + path + '/updatejson2',
+          data: data,
+          method: 'PUT'
+        }).then(function(result) {
+          console.log(result);
+          location.reload();
+          
+        });
       },
     });
   }; // end onupload function
@@ -82,6 +90,7 @@ $(document).on("page:change", function() {
 
     });
   }); // end up-form
+
 
 
 });//ends page change function

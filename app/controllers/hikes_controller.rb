@@ -41,6 +41,15 @@ class HikesController < ApplicationController
     puts "====================="
 	end
 
+	def updatejson2
+      hike = Hike.find(params[:id])
+      puts params[:img_url]
+      hike.img_url = params[:img_url]
+      hike.save
+      render json: hike
+    end
+
+
 	def destroy
 		@hike = Hike.find(params[:id])
 		@hike.destroy

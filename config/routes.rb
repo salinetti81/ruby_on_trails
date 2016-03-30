@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   		put 'updatejson'
   	end
   end	
-  resources :hikes 
+  
+  resources :hikes do
+    member do
+      put 'updatejson2'
+    end
+  end 
   
   root to: 'users#secure'
   get 'secure' => 'users#secure'

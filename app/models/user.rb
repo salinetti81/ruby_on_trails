@@ -9,6 +9,5 @@ class User < ActiveRecord::Base
  	validates :about, presence: false
  	# validates :image_urls, presence: false
 
- 	has_many :hikes_and_users
-  has_many :hikes, :through => :hikes_and_users 
+ has_and_belongs_to_many :hikes
 end
