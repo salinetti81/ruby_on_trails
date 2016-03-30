@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hike-buddy
+  api_key: '919218211846681'
+  api_secret: nITlKzsWiG6Qj1i1sFhEzPy8DM8
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hike-buddy
+  api_key: '919218211846681'
+  api_secret: nITlKzsWiG6Qj1i1sFhEzPy8DM8
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hike-buddy
+  api_key: '919218211846681'
+  api_secret: nITlKzsWiG6Qj1i1sFhEzPy8DM8
+  enhance_image_tag: true
+  static_image_support: false

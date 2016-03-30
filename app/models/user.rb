@@ -3,8 +3,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
  	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
- 	has_and_belongs_to_many :hikes
+ 	# has_and_belongs_to_many :hikes
  	validates :first_name, presence: false
  	validates :last_name, presence: false
  	validates :about, presence: false
+
+ 	has_many :hikes_and_users
+  has_many :hikes, :through => :hikes_and_users 
 end

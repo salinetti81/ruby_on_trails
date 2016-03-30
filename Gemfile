@@ -58,5 +58,7 @@ gem "disqus"
 
 gem 'jquery-turbolinks'
 
+gem 'unirest'
 
+gem 'cloudinary'
 

@@ -1,14 +1,18 @@
-<h2>Users Show Page</h2>
-
-<h3><%= @user.email %></h3>
 <h3><%= @user.first_name %> <%= @user.last_name %></h3>
-<p><%= @user.about %></p>
+<h5>About me:</h5><p><%= @user.about %></p>
 
-<a href="/users/<%= @user.id %>/edit">Edit Profile</a>
-
+<a href="/users/<%= @user.id %>/edit">Update Information</a>
+<br>
 <a href="/hikes/new">Add a Hike</a>
+<hr>
+<h3>Upload Photos</h3>
 
+<form id="up-form">
+  <input type="file" multiple />
+  <button type="submit">Upload</button>
+</form>
 
+<hr>
 <h3>Things that will be on this page</h3>
 <ul>
 	<li>Profile Photo</li>
@@ -20,9 +24,6 @@
 </ul>
 
 
-<form id="up-form">
-  <input type="file" multiple />
-  <button type="submit">Upload</button>
-</form>
+
 
 
