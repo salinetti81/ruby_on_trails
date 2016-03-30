@@ -43,14 +43,16 @@ s.setAttribute('data-timestamp', +new Date());
 //end of disqus function
 
 //image uploading by ospry
-var ospry = new Ospry('pk-test-xhjlgfnck6goq0ccloxx4l1h');
+var ospry = new Ospry('pk-prod-lcncdvah2hokmvr29hbh5w65');
+console.log(ospry)
 
 var onUpload = function(err, metadata) {
   ospry.get({
     url: metadata.url,
     maxHeight: 400,
     imageReady: function(err, domImage) {
-      $('body').append(domImage);          
+      $('body').append(domImage);  
+      console.log(domImage)        
     },
   });
 };
@@ -60,6 +62,7 @@ $('#up-form').submit(function(e) {
   ospry.up({
     form: this,
     imageReady: onUpload,
+    
   });
 });
 

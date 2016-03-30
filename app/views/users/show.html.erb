@@ -1,5 +1,6 @@
 <h3><%= @user.first_name %> <%= @user.last_name %></h3>
 <h5>About me:</h5><p><%= @user.about %></p>
+<img src=" <%= @user.image %>"> <br>
 
 <a href="/users/<%= @user.id %>/edit">Update Information</a>
 <br>
@@ -15,7 +16,7 @@
 <hr>
 <h3>Things that will be on this page</h3>
 <ul>
-	<li>Profile Photo</li>
+	<li>Profile Photo[x]</li>
 	<li>About you [x]</li> 
 <!-- 	<li>Hikes you've been on</li>
 	<li>Upcoming Hikes</li> -->
