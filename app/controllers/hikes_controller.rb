@@ -2,6 +2,11 @@ class HikesController < ApplicationController
 
 	def index 
 		@hikes = Hike.all
+		if params[:search]
+    	@hikes = Hike.search(params[:search])
+  	else
+    	@hikes = Hike.all
+  	end
 	end
 
 	def create
@@ -45,7 +50,7 @@ class HikesController < ApplicationController
 	private
 
 	def hikes_params
-		params.require(:hike).permit(:name, :location, :description, :img_url)
+		params.require(:hike).permit(:name, :location, :description, :img_url, :search)
 	end
 
 end

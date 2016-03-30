@@ -1,27 +1,22 @@
-<h5>hikes index page</h5>
-
 <h1>List of Hikes</h1>
 <% @hikes.each do |hike| %>
-
 	<a href="/hikes/<%= hike.id %>"><%= hike.name %></a> <br>
-
 <% end %>
-
-
-
-<hr>
 
 	<% @hikes.each do |hike| %>
 	<h2>Hike: <%= hike.name %></h2>
 	<h3>Location: <%= hike.location %></h3>
 	<p><%= hike.description%></p>
- 
-
+<hr>
 	<%= link_to 'View', hike_path(hike.id) %>
   <%= link_to 'Delete', hike, :method => 'delete' %>
-  
+<hr>
+<% end %>
 
-  <hr>
+Search Results
 
-  <% end %>
-
+<% if @posts.present? %>
+  <%= render @posts %>
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>
