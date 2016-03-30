@@ -1,5 +1,6 @@
 
 Hike.delete_all
+User.delete_all
 
 
 Hike.create({
@@ -28,4 +29,11 @@ Hike.create({
 	location: "Utah",
 	description: "There's Arches made out of stone, wild stuff.",
 	img_url: "http://www.discovermoab.com/images/arches_double_arch.jpg"
+})
+
+User.create({
+	first_name: "Pete",
+	last_name: "Peterson",
+	email: "pete@pete.com",
+	about: "I'm little Petey and I have big dreams"
 })
