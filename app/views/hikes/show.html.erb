@@ -6,13 +6,22 @@
 
 <img src=" <%= @hike.img_url %>"> 
 
+
+
 <br>
 
+    
 
-<!-- <form id="up-form">
+<form id="up-form">
   <input type="file" multiple />
   <button type="submit">Upload</button>
-</form> -->
+</form>
+
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
 
 <!-- Links to list of all hikes -->
 <%= link_to 'Back to Hikes', hikes_path(@hikes)%>

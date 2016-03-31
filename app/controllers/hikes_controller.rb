@@ -24,7 +24,7 @@ class HikesController < ApplicationController
 	def edit
 		@hike = Hike.find(params[:id])
 		puts "======================"
-    puts "Information was edited"
+    puts " Hike Information was edited"
     puts "======================"
 	end
 
@@ -37,7 +37,7 @@ class HikesController < ApplicationController
 		@hike.update_attributes(hike)
 		redirect_to hikes.path
 		puts "====================="
-    puts "User info was updated"
+    puts "Hike info was updated"
     puts "====================="
 	end
 
@@ -46,7 +46,7 @@ class HikesController < ApplicationController
       puts params[:img_url]
       hike.img_url = params[:img_url]
       hike.save
-      render json: hike
+      render json2: hike
     end
 
 
@@ -59,7 +59,7 @@ class HikesController < ApplicationController
 	private
 
 	def hikes_params
-		params.require(:hike).permit(:name, :location, :description, :img_url)
+		params.require(:hike).permit(:name, :location, :description, :img_url, :lat, :long)
 	end
 
 end

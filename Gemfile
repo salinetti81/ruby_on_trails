@@ -62,3 +62,9 @@ gem 'unirest'
 
 gem 'cloudinary'
 
+# Maps
+gem 'gmaps4rails'
+
+gem 'geocoder'
+
+

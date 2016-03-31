@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  # Image upload to users show page
   resources :users do
   	member do
   		put 'updatejson'
   	end
   end	
   
+  # Image upload to hike show page
   resources :hikes do
     member do
       put 'updatejson2'
     end
   end 
   
-  root to: 'users#secure'
+  root to: 'hikes#index'
   get 'secure' => 'users#secure'
   post '/hikes/search' => 'hikes#search'
   
