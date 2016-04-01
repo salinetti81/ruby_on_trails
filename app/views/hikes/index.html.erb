@@ -1,24 +1,35 @@
 <h1>Hikes</h1>
 <hr>
 
+<!-- Iterate through the hikes -->
 	<% @hikes.each do |hike| %>
 	<h2><%= link_to hike.name, hike_path(hike.id) %></h2>
 	<h2><%= hike.location %></h2>
 	<!-- <p><%= hike.description%></p> -->
- 
+  <% end %>
 <hr>
-<% end %>
 
-  <div id="map" style='width: 800px; height: 400px;'>
-  	
-  </div>
-
-  <div id= "sidebar_builder" style='width: 800px; height: 400px;'></div>
+<!-- Google Maps Container -->
+<div style='width: 800px;'>
+  <div id="map" class="index_map" ></div>
 </div>
-<div id='sidebar_container'> 
-</div>
-    
 
+<!-- Google Maps Script, Shows all the hikes based on long/lat coordinates -->
+ <script type="text/javascript">
+<% @hikes.each do |hike| %>
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers([
+    {
+      "lat": <%=hike.latitude%>,
+      "lng": <%=hike.longitude%>,
+      "infowindow": "<%=hike.name%>"
+    }
+  ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  handler.getMap().setZoom(3);
+});
+ <% end %>
+</script>
 
-
-    

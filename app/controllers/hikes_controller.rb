@@ -6,7 +6,7 @@ class HikesController < ApplicationController
     	@hikes = Hike.search(params[:search])
   	else
     	@hikes = Hike.all
-  end
+  	end
 	
 
 	def create
@@ -29,7 +29,7 @@ class HikesController < ApplicationController
 	end
 
 	def show
-		@hike = Hike.find(params[:id])
+		@hike = Hike.find(params[:id])	
 	end
 	
 
