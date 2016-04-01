@@ -95,23 +95,93 @@ $(document).on("page:change", function() {
     });
   }); // end up-form
 
+// GOOGLE MAPS
+// handler = Gmaps.build('Google');
+// handler.buildMap({
+//     provider: {
+//       disableDefaultUI: true
+//       // pass in other Google Maps API options here
+//     },
+//     internal: {
+//       id: 'map'
+//     }
+//   },
+//   function(){ //add markers based on long/lat coordinates
+//     markers = handler.addMarkers([
+//       {
+//         "lat": 0,
+//         "lng": 0,
+//         "picture": {
+//           // "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+//           "width":  32,
+//           "height": 32
+//         },
+//         "infowindow": "hello!"
+//       }
+//     ]);
+//     handler.bounds.extendWith(markers);
+//     handler.fitMapToBounds();
+//   }
+// );
+
+//Map of all the hiked on index page
+function createSidebarLi(json){
+  return ("<li><a>" + json.name + "</a></li>");
+};
+
+function bindLiToMarker($li, marker){
+  $li.on('click', function(){
+    handler.getMap().setZoom(14);
+    marker.setMap(handler.getMap()); //because clusterer removes map property from marker
+    marker.panTo();
+    google.maps.event.trigger(marker.getServiceObject(), 'click');
+  })
+};
+
+function createSidebar(json_array){
+  _.each(json_array, function(json){
+    var $li = $( createSidebarLi(json) );
+    $li.appendTo('#sidebar_container');
+    bindLiToMarker($li, json.marker);
+  });
+};
+
 handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers([
-    {
-      "lat": 36.054445,
-      "lng": -112.140111,
-      "picture": {
-        // "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-        "width":  32,
-        "height": 32
-      },
-      "infowindow": "hello!"
-    }
-  ]);
+handler.buildMap({ internal: {id: 'sidebar_builder'}}, function(){
+  var json_array = [
+    { lat: 40, lng: -80, name: 'Hike 1', infowindow: "Hike 1" },
+    { lat: 45, lng: -90, name: 'Hike 2', infowindow: "Hike 2" },
+    { lat: 50, lng: -85, name: 'Hike 3', infowindow: "Hike 3" }
+  ];
+
+  var markers = handler.addMarkers(json_array);
+
+  _.each(json_array, function(json, index){
+    json.marker = markers[index];
+  });
+
+  createSidebar(json_array);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });
+// handler = Gmaps.build('Google');
+// handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+//   // markers = handler.addMarkers([
+//   //   {
+//   //     "lat": 36.054445,
+//   //     "lng": -112.140111,
+//   //     "picture": {
+//   //       // "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+//   //       "width":  32,
+//   //       "height": 32
+//   //     },
+//   //     "infowindow": "hello!"
+//   //   }
+//   // ]);
+  
+//   handler.bounds.extendWith(markers);
+//   handler.fitMapToBounds();
+// });
 // function gmap_show(hike) {
 //   if ((hike.lat == null) || (hike.lng == null) ) {    // validation check if coordinates are there
 //     return 0;

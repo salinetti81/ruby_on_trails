@@ -1,8 +1,6 @@
 
 Hike.delete_all
 
-
-
 Hike.create({
 	name: "Bear Mountain",
 	location: "New York",

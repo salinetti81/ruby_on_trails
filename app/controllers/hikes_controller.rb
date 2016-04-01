@@ -6,8 +6,8 @@ class HikesController < ApplicationController
     	@hikes = Hike.search(params[:search])
   	else
     	@hikes = Hike.all
-  	end
-	end
+  end
+	
 
 	def create
 		@hike = Hike.create(hikes_params)
@@ -31,6 +31,7 @@ class HikesController < ApplicationController
 	def show
 		@hike = Hike.find(params[:id])
 	end
+	
 
 	def update
 		@hike = Hike.find(params[:id])
@@ -42,19 +43,19 @@ class HikesController < ApplicationController
 	end
 
 	def updatejson2
-      hike = Hike.find(params[:id])
-      puts params[:img_url]
-      hike.img_url = params[:img_url]
-      hike.save
-      render json2: hike
-    end
-
+    hike = Hike.find(params[:id])
+    puts params[:img_url]
+    hike.img_url = params[:img_url]
+    hike.save
+    render json2: hike
+  end
 
 	def destroy
 		@hike = Hike.find(params[:id])
 		@hike.destroy
 		redirect_to hikes_path 
 	end
+end
 
 	private
 

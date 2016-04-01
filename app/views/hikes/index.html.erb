@@ -5,12 +5,20 @@
 	<h2><%= link_to hike.name, hike_path(hike.id) %></h2>
 	<h2><%= hike.location %></h2>
 	<!-- <p><%= hike.description%></p> -->
-  <%= link_to 'Delete', hike, :method => 'delete' %>
+ 
 <hr>
 <% end %>
 
-<div id="map-canvas">Map Canvas
+  <div id="map" style='width: 800px; height: 400px;'>
+  	
+  </div>
 
+  <div id= "sidebar_builder" style='width: 800px; height: 400px;'></div>
 </div>
+<div id='sidebar_container'> 
+</div>
+    
 
 
+
+    
