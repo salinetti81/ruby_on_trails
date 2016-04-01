@@ -4,7 +4,39 @@ body {
 	margin: 2% 8%;
 }
 
+header {
+	position: fixed;
+}
+
+.hikes_container {
+padding: 1%;
+height: 400px;
+overflow: auto;
+
+}
 .index_map {
-	width: 800px;
-	height: 400px;
+	width: 700px;
+	height: 600px;
+	margin-left: 50px;
+}
+
+.index_flex
+ {
+  /* basic styling */
+  width: 100%;
+  height: 800px;
+
+  /* flexbox setup */
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+
+  display: flex;
+  flex-direction: row;
+ }
+
+.user_index_image {
+  height: 150px;
+  width: 150px;
+  border-radius: 0px;
+  margin-bottom: 20px;
 }
