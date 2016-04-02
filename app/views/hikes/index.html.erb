@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-<h1>Hikes</h1>
+
 <% end %>
 <!-- Slidshow-only display content if no user is signed in -->
 <% if !user_signed_in? %>
@@ -29,9 +29,9 @@
 
 
 	<div id="slideshow">
-	    <img src="http://adventourus.com/wp-content/uploads/2014/10/Chamonix-Hiking-View-of-Valley.jpg" alt="Slideshow Image 1" class="active" />
-	    <img src="http://www.voga.org/hiking1.jpg" alt="Slideshow Image 2" />
-	    <img src="http://www.adventurewomen.com/wp-content/uploads/2013/07/glacier-hike-WP.jpg" alt="Slideshow Image 3" />
+	    <img src="http://www.denalihostel.com/images/employee_hike.jpg" alt="Slideshow Image 1" class="active" />
+	    <img src="http://images.fineartamerica.com/images-medium-large-5/hiker-silhouette-lane-erickson.jpg" alt="Slideshow Image 2" />
+	    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/McKinley_and_a_hiker.jpg/1280px-McKinley_and_a_hiker.jpg" alt="Slideshow Image 3" />
 	    <img src="http://stayhealthyla.com/wp-content/uploads/2016/03/191013.jpg" alt="Slideshow Image 4" />
 	</div>
 <% end %>
@@ -39,6 +39,7 @@
 <!-- Iterate through the hikes -->
 <div class="index_flex">
 	<div class="hikes_container">
+		<h1>Hikes</h1>
 		<% @hikes.each do |hike| %>
 		<h2><%= link_to hike.name, hike_path(hike.id) %></h2>
 		<!-- <h2><%= hike.location %></h2> -->
