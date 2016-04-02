@@ -1,4 +1,4 @@
-<%=form_for @hike do |form| %>
+<%=form_for  (Hike.new) do |form| %>
 	
 	Name: <%= form.text_field :name %> <br>
 	Location: <%= form.text_field :location %> <br>
@@ -15,3 +15,5 @@
   <input type="file" multiple />
   <button type="submit">Upload</button>
 </form> -->
+
+

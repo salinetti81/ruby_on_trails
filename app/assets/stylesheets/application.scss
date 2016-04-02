@@ -40,3 +40,40 @@ overflow: auto;
   border-radius: 0px;
   margin-bottom: 20px;
 }
+
+/*hikes show page*/
+.show_map {
+  width: 500px;
+  height: 400px;
+}
+
+.show_flex
+ {
+  /* basic styling */
+  width: 100%;
+  height: auto;
+  /* flexbox setup */
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 100px;
+ }
+
+.show_img {
+  height: 400px;
+  width: 500px;
+  margin-right: 175px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

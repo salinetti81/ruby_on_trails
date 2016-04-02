@@ -6,19 +6,18 @@ class HikesController < ApplicationController
     	@hikes = Hike.search(params[:search])
   	else
     	@hikes = Hike.all
-  	end
-	
-
-	def create
-		@hike = Hike.create(hikes_params)
-		redirect_to hikes_path
-	end
+  end
 
 	def new 
 		@hike = Hike.new
 		 puts "================="
       puts "New Hike Created"
       puts "================="
+	end
+
+	def create
+		@hike = Hike.create(hikes_params)
+		redirect_to hikes_path
 	end
 
 	def edit
@@ -32,7 +31,6 @@ class HikesController < ApplicationController
 		@hike = Hike.find(params[:id])	
 	end
 	
-
 	def update
 		@hike = Hike.find(params[:id])
 		@hike.update_attributes(hike)
@@ -57,7 +55,7 @@ class HikesController < ApplicationController
 	end
 end
 
-	private
+private
 
 	def hikes_params
 		params.require(:hike).permit(:name, :location, :description, :img_url, :lat, :long)
