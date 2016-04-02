@@ -18,6 +18,7 @@
 </div>
 
 <script type="text/javascript">
+
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers([
@@ -27,7 +28,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
       "infowindow": "<%=@hike.latitude%>, <%=@hike.longitude%>"
     }
   ]);
-  
+
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
   handler.getMap().setZoom(9);

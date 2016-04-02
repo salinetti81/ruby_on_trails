@@ -1,5 +1,9 @@
 class HikesController < ApplicationController
 
+  def home
+  	@hikes = Hike.all
+  end
+
 	def index 
 		@hikes = Hike.all
 		if params[:search]

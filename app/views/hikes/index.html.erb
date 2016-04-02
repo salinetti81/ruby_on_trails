@@ -1,4 +1,41 @@
+<% if user_signed_in? %>
 <h1>Hikes</h1>
+<% end %>
+<!-- Slidshow-only display content if no user is signed in -->
+<% if !user_signed_in? %>
+
+	<script type="text/javascript">
+	function slideSwitch() {
+	    var $active = $('#slideshow IMG.active');
+
+	    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+	    // use this to pull the images in the order they appear in the markup
+	    var $next =  $active.next().length ? $active.next()
+	        : $('#slideshow IMG:first');
+
+	    $active.addClass('last-active');
+
+	    $next.css({opacity: 0.0})
+	        .addClass('active')
+	        .animate({opacity: 1.0}, 1000, function() {
+	            $active.removeClass('active last-active');
+	        });
+	}
+	$(function() {
+	    setInterval( "slideSwitch()", 5000 );
+	});
+	</script>
+
+
+	<div id="slideshow">
+	    <img src="http://adventourus.com/wp-content/uploads/2014/10/Chamonix-Hiking-View-of-Valley.jpg" alt="Slideshow Image 1" class="active" />
+	    <img src="http://www.voga.org/hiking1.jpg" alt="Slideshow Image 2" />
+	    <img src="http://www.adventurewomen.com/wp-content/uploads/2013/07/glacier-hike-WP.jpg" alt="Slideshow Image 3" />
+	    <img src="http://stayhealthyla.com/wp-content/uploads/2016/03/191013.jpg" alt="Slideshow Image 4" />
+	</div>
+<% end %>
+
 <!-- Iterate through the hikes -->
 <div class="index_flex">
 	<div class="hikes_container">
@@ -30,8 +67,10 @@
 	  ]);
 	  handler.bounds.extendWith(markers);
 	  handler.fitMapToBounds();
-	  handler.getMap().setZoom(4);
+	  handler.getMap().setZoom(2);
 	});
+	//using the index provided by jquery.each()  
+
 	 <% end %>
 	</script>
 
