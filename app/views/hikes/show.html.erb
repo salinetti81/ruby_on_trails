@@ -1,14 +1,16 @@
-<h3><%= @hike.name %></h3>
-<h3><%= @hike.location %></h3>
-<p><%= @hike.description %></p>
-
+<div class="show_info">
+  <h3><%= @hike.name %>, <%= @hike.location %></h3>
+  <h3></h3>
+  <p><%= @hike.description %></p>
+</div>
   <!-- <% @instagram.each do |instagram| %>
 
     <%= image_tag instagram.images.standard_resolution.url %>
 
     <% end %> -->
 
-    <div class="pics"> </div>
+<!-- Instagram API pics go into this div -->
+<div class="pics"> </div>
 
 <div class="show_flex">
 
@@ -23,33 +25,33 @@
 <!-- Google Map div -->
 <div style='width: 800px;'>
   <div class= "show_map" id="map" ></div>
-</div>
-
-<script type="text/javascript">
-
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers([
-    {
+</div> <!-- ends Google Maps div -->
+  <script type="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers([
+      {
       "lat": <%=@hike.latitude%>,
       "lng": <%=@hike.longitude%>,
       "infowindow": "<%=@hike.latitude%>, <%=@hike.longitude%>"
-    }
-  ]);
+      }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(9);
+  });
+  </script>
+</div> <!-- ends flex container -->
 
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-  handler.getMap().setZoom(9);
-});
-</script>
-</div>
 <!-- Links to list of all hikes -->
-<%= link_to 'Back to Hikes', hikes_path(@hikes)%>
-
+<div class="hikes_link">
+<%= link_to 'Explore More Hikes', hikes_path(@hikes)%>
+</div>
 <!-- Comments -->
-<h3>Leave A Commnet</h3>
-<div id="disqus_thread"></div>
-
+<div class="comments">
+  <h3>Leave A Commnet</h3>
+  <div id="disqus_thread"></div>
+</div>
 <hr>
 <% if user_signed_in? %>
 <footer> <%= link_to 'Delete This Hike', @hike, :method => 'delete', data: { confirm: 'Are you sure?' } %></footer>

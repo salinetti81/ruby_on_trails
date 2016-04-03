@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!, only: :secure
+
     
     def index
       @users = User.all
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
 
     def edit
       @user = User.find(params[:id])
+       
       puts "======================"
       puts "Information was edited"
       puts "======================"

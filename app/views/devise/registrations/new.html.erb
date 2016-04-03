@@ -1,3 +1,29 @@
+
+<script type="text/javascript">
+function slideSwitch() {
+  var $active = $('#slideshow IMG.active');
+  if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+  // use this to pull the images in the order they appear in the markup
+  var $next =  $active.next().length ? $active.next()
+      : $('#slideshow IMG:first');
+  $active.addClass('last-active');
+  $next.css({opacity: 0.0})
+      .addClass('active')
+      .animate({opacity: 1.0}, 1000, function() {
+          $active.removeClass('active last-active');
+      });
+  }
+  $(function() {
+      setInterval( "slideSwitch()", 5000 );
+  });
+  </script>
+  <div id="slideshow">
+      <img src="http://www.denalihostel.com/images/employee_hike.jpg" alt="Slideshow Image 1" class="active" />
+      <img src="http://images.fineartamerica.com/images-medium-large-5/hiker-silhouette-lane-erickson.jpg" alt="Slideshow Image 2" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/McKinley_and_a_hiker.jpg/1280px-McKinley_and_a_hiker.jpg" alt="Slideshow Image 3" />
+      <img src="http://stayhealthyla.com/wp-content/uploads/2016/03/191013.jpg" alt="Slideshow Image 4" />
+  </div>
+<div class="new_user_container">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -25,5 +51,5 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
 <%= render "devise/shared/links" %>
+</div>

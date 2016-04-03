@@ -69,4 +69,5 @@ gem 'geocoder'
 
 gem 'instagram'
 
+gem 'cancancan', '~> 1.10'
 
