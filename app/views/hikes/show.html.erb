@@ -2,6 +2,14 @@
 <h3><%= @hike.location %></h3>
 <p><%= @hike.description %></p>
 
+  <!-- <% @instagram.each do |instagram| %>
+
+    <%= image_tag instagram.images.standard_resolution.url %>
+
+    <% end %> -->
+
+    <div class="pics"> </div>
+
 <div class="show_flex">
 
 <img class="show_img" src=" <%= @hike.img_url %>"> 
@@ -43,4 +51,6 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
 <div id="disqus_thread"></div>
 
 <hr>
+<% if user_signed_in? %>
 <footer> <%= link_to 'Delete This Hike', @hike, :method => 'delete', data: { confirm: 'Are you sure?' } %></footer>
+<% end %>

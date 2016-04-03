@@ -9,14 +9,17 @@ header {
 }
 
 .site_title {
-  padding-top: 20px;
+  padding-top: 50px;
   text-align: center;
+  font-family: 'Passion One', cursive;
+  font-size: 5em;
+
 }
 
 .hikes_container {
 padding: 1%;
 height: 400px;
-overflow: auto;
+/*overflow: auto;*/
 
 }
 .index_map {
@@ -78,7 +81,7 @@ overflow: auto;
     width: 100%;
     height: 800px;
     margin-bottom: 100px;
-    margin-top: -175px;
+    margin-top: -236px;
     z-index: -10;
 
 }
