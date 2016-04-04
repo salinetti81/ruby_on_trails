@@ -1,12 +1,12 @@
 
 <!-- <h4>Home Page for sign in or sign up</h4> -->
-
-<h1>Hikers </h1>
-<% @users.each do |user| %>
-	<img class= "user_index_image" src=" <%= user.image %>">
-	<a href="/users/<%= user.id %>"><%= user.first_name %> <%= user.last_name %> </a> <br>
-<% end %>
-
-
+<div class="hikers_list">
+	<h1>Hikers </h1>
+	<% @users.each do |user| %>
+	<a href="/users/<%= user.id %>"><h5><%= user.first_name %> <%= user.last_name %> </h5></a> <br>
+		<img class= "user_index_image" src=" <%= user.image %>">
+		<hr>
+	<% end %>
+</div>
 
 

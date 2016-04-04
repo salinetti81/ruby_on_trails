@@ -1,9 +1,9 @@
 <%=form_for @user do |form| %>
 	
-	Email: <%= form.text_field :email %> <br>
-	First Name: <%= form.text_field :first_name %> <br>
-	Last Name: <%= form.text_field :last_name %> <br>
-	About: <%= form.text_area :about %> <br>
+	Email: <br><div class="user_email"><%= form.text_field :email %> </div> <br>
+	First Name:<br> <%= form.text_field :first_name %> <br>
+	Last Name:<br> <%= form.text_field :last_name %> <br>
+	About:<br> <%= form.text_area :about %> <br>
 	
 
 	<%= form.submit %>

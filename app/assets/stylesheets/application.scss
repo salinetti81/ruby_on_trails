@@ -211,11 +211,13 @@ margin-left: 45%;
   color: black;
   text-align: center;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 1px;
   width: 20%;
   margin-left: 40%;
-  margin-bottom: 50px;
-  padding: 10px;
+  /*margin-bottom: -20em;*/
+  padding-top: 20px;
+  margin-top: 50px;
+  height: 75px;
 }
 
 .hikes_link:hover {
@@ -237,18 +239,19 @@ margin-left: 45%;
   color: black;
   text-align: center;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 1px;
   width: 20%;
   margin-left: 40%;
   margin-bottom: -20em;
-  padding: 10px;
+  padding-top: 20px;
   margin-top: 50px;
+  height: 75px;
 }
 
 .pull_up:hover {
   background-color: #F0F2F2;
   cursor: pointer;
-  opacity: .8;
+  opacity: .6;
 }
 
 .pull_up a {
@@ -267,11 +270,16 @@ margin-bottom: 30px;
 margin-top: 10px;
 }
 
+.hikers_list {
+  margin-left: 30%;
+  width: 30%;
+  text-align: center;
+  display: block;
+}
 
-/*.photo_upload button {
-  margin-left: -70%;
-  margin-top: 10px;
-}*/
+.hikers_list h5 {
+  padding-bottom: 0px;
+}
 
 
 footer {
