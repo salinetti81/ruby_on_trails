@@ -33,7 +33,6 @@ class HikesController < ApplicationController
 
 	def show
 		@hike = Hike.find(params[:id])	
-		@instagram = Instagram.user_recent_media("203001387", {:count => 2})
 	end
 	
 	def update

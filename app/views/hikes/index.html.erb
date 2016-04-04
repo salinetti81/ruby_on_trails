@@ -4,6 +4,10 @@
 <!-- Slidshow-only display content if no user is signed in -->
 <% if !user_signed_in? %>
 
+
+<a href="/hikes#hikes_container"><div class="pull_up">Explore Hikes</div></a>
+
+
 	<script type="text/javascript">
 	function slideSwitch() {
 	    var $active = $('#slideshow IMG.active');
@@ -28,6 +32,8 @@
 	</script>
 
 
+
+</div>
 	<div id="slideshow">
 	    <img src="http://www.denalihostel.com/images/employee_hike.jpg" alt="Slideshow Image 1" class="active" />
 	    <img src="http://images.fineartamerica.com/images-medium-large-5/hiker-silhouette-lane-erickson.jpg" alt="Slideshow Image 2" />
@@ -38,6 +44,7 @@
 <% end %>
 
 <!-- Iterate through the hikes -->
+<div id="hikes_container"></div>
 <div class="index_flex">
 	<div class="hikes_container">
 		<h1>Hikes</h1>

@@ -1,8 +1,9 @@
+
 <%=form_for  (Hike.new) do |form| %>
 	
 	Name: <%= form.text_field :name %> <br>
-	Location: <%= form.text_field :location %> <br>
-	About: <%= form.text_area :description %> <br>
+	<div class="location">Location: <%= form.text_field :location %> </div> <br>
+	<div class="about">About: <%= form.text_area :description %></div> <br>
 	Image: <%= form.text_field :img_url %> <br> 
 
 	<%= form.submit %>

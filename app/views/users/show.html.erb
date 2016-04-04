@@ -1,28 +1,33 @@
-<h3><%= @user.first_name %> <%= @user.last_name %></h3>
-<h5>About me:</h5><p><%= @user.about %></p>
-<img src=" <%= @user.image %>"> <br>
-
+<div class="show_info">
+	<h3><%= @user.first_name %> <%= @user.last_name %></h3>
+	<img class="user_show_image" src=" <%= @user.image %>"> 
 
 <br>
-<a href="/hikes/new">Add a Hike</a>
-<hr>
-<p>Change Your Profile Photo</p>
+	<h5>About me:</h5><p><%= @user.about %></p>
+</div>
 
+<br>
+<hr>
+
+	
+<div class="photo_upload">
 <form id="up-form">
-  <input type="file" multiple /> <br>
+	<h5>Change Your Profile Photo</h5>
+
+  <input type="file" multiple /> 
   <button type="submit">Upload</button>
 <!--   send upload data to Users controller somehow -->
 </form>
 
 
+<a href="/hikes/new"><h5>Add a Hike</h5></a> 
 
-<hr>
-<a href="/users/<%= @user.id %>/edit">Update Information</a>
+<a href="/users/<%= @user.id %>/edit"><h5>Update Information</h5></a>
 
-
-<!-- <h5>Hikes</h5>
+</div>
+<!--  <h5>Hikes</h5>
 <% @user.hikes.each do |hike| %>
 <li>Name<%= hike.name %></li>
 <%= link_to "Show", user_hike_path(user_id: @user.id, id: hike.id) %>
 
-<% end %> -->
+<% end %>  -->

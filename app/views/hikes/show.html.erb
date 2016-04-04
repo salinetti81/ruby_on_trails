@@ -3,14 +3,6 @@
   <h3></h3>
   <p><%= @hike.description %></p>
 </div>
-  <!-- <% @instagram.each do |instagram| %>
-
-    <%= image_tag instagram.images.standard_resolution.url %>
-
-    <% end %> -->
-
-<!-- Instagram API pics go into this div -->
-<div class="pics"> </div>
 
 <div class="show_flex">
 
@@ -44,15 +36,32 @@
 </div> <!-- ends flex container -->
 
 <!-- Links to list of all hikes -->
-<div class="hikes_link">
-<%= link_to 'Explore More Hikes', hikes_path(@hikes)%>
-</div>
+<a href="/hikes#hikes_container"><div class="hikes_link">
+Explore More Hikes</div></a>
+
+
+
 <!-- Comments -->
+<% if user_signed_in? %>
 <div class="comments">
   <h3>Leave A Commnet</h3>
   <div id="disqus_thread"></div>
 </div>
+
 <hr>
-<% if user_signed_in? %>
+
 <footer> <%= link_to 'Delete This Hike', @hike, :method => 'delete', data: { confirm: 'Are you sure?' } %></footer>
+
+<% else %>
+
+<div class="hike_show_footer">
+<h5><a href="/users/sign_in">Log in</a> or <a href="/users/sign_up">sign up</a> to comment on this hike.</a></h5>
+</div>
+
+
+
+
+
+
+
 <% end %>
