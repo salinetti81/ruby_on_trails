@@ -71,3 +71,7 @@ gem 'instagram'
 
 gem 'cancancan', '~> 1.10'
 
+ruby '2.2.3' 
+
+gem 'rails_12factor', group: :production
+

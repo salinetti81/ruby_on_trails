@@ -212,18 +212,20 @@ margin-left: 45%;
   text-align: center;
   border: 1px solid black;
   border-radius: 1px;
-  width: 20%;
-  margin-left: 40%;
+  width: 10em;
+  margin-left: 43%;
   /*margin-bottom: -20em;*/
   padding-top: 20px;
   margin-top: 50px;
   height: 75px;
+  transition: .5s;
 }
 
 .hikes_link:hover {
   background-color: #F0F2F2;
   cursor: pointer;
   opacity: .8;
+  transition: .5s;
 }
 
 .hikes_link a {
@@ -240,18 +242,21 @@ margin-left: 45%;
   text-align: center;
   border: 1px solid black;
   border-radius: 1px;
-  width: 20%;
-  margin-left: 40%;
+  width: 10em;
+  margin-left: 43%;
   margin-bottom: -20em;
   padding-top: 20px;
   margin-top: 50px;
   height: 75px;
+  transition: .5s;
+  font-size: 18px;
 }
 
 .pull_up:hover {
   background-color: #F0F2F2;
   cursor: pointer;
   opacity: .6;
+  transition: .5s;
 }
 
 .pull_up a {
