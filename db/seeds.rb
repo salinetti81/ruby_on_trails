@@ -4,7 +4,7 @@ Hike.delete_all
 Hike.create({
 	name: "Bear Mountain",
 	location: "New York",
-	description: "Bear Mountain State Park is a 5,067-acre (20.51 km2) state park located on the west side of the Hudson River in Rockland County, New York.[4] The park offers biking, hiking, boating, picnicking, swimming, cross-country skiing, cross-country running, sledding and ice skating. It also includes several facilities such as the Perkins Memorial Tower, the Trailside Museum and Zoo, the Bear Mountain Inn, a merry-go-round, pool, and a skating rink. It is managed by the Palisades Interstate Park Commission",
+	description: "Bear Mountain State Park is a 5,067-acre (20.51 km2) state park located on the west side of the Hudson River in Rockland County, New York. The park offers biking, hiking, boating, picnicking, swimming, cross-country skiing, cross-country running, sledding and ice skating. It also includes several facilities such as the Perkins Memorial Tower, the Trailside Museum and Zoo, the Bear Mountain Inn, a merry-go-round, pool, and a skating rink. It is managed by the Palisades Interstate Park Commission",
 	img_url: "http://www.nycharleydavidson.com/blog/wp-content/uploads/2015/09/Bear-Mountain-Bridge.jpg"
 })
 
@@ -18,7 +18,7 @@ Hike.create({
 Hike.create({
 	name: "Baxter State Park",
 	location: "Maine",
-	description: "Baxter State Park is a large wilderness area permanently preserved as a state park, located in Piscataquis County in north-central Maine. The park was established by 28 donations of land, in trust, from park donor Percival P. Baxter between the years of 1931 and 1962, eventually creating a park of over 200,000 acres (809 km2) in size. Baxter Park is not part of the Maine State Park system. Sole governance is provided by the Baxter State Park Authority, consisting of the Maine Attorney General, the Maine Commissioner of Inland Fisheries and Wildlife and the Director of the Maine Forest Service. The park is independently funded through a combination of revenues from trusts, user fees and the sale of forest products from the park's Scientific Forest Management Area. The park is home to the state's highest peak, Katahdin. The number of visitors to the park declined from 75,000 in 2000 to 55,000 in 2005,[1] but since 2005 visitor use has been slowly increasing.",
+	description: "Baxter State Park is a large wilderness area permanently preserved as a state park, located in Piscataquis County in north-central Maine. The park was established by 28 donations of land, in trust, from park donor Percival P. Baxter between the years of 1931 and 1962, eventually creating a park of over 200,000 acres (809 km2) in size. Baxter Park is not part of the Maine State Park system. Sole governance is provided by the Baxter State Park Authority, consisting of the Maine Attorney General, the Maine Commissioner of Inland Fisheries and Wildlife and the Director of the Maine Forest Service. The park is independently funded through a combination of revenues from trusts, user fees and the sale of forest products from the park's Scientific Forest Management Area. The park is home to the state's highest peak, Katahdin. The number of visitors to the park declined from 75,000 in 2000 to 55,000 in 2005, but since 2005 visitor use has been slowly increasing.",
 	img_url: "http://www.myparkphotos.com/photos/images/2011.10.07/59530.jpg"
 })
 
